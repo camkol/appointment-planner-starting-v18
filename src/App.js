@@ -36,11 +36,21 @@ function App() {
         <Route index element={<Navigate to={ROUTES.CONTACTS} replace />} />
         <Route
           path={ROUTES.CONTACTS}
-          element={<ContactsPage /> /* Add props to ContactsPage */}
+          element={
+            <ContactsPage
+              onContact={handleContacts}
+              contacts={contacts}
+            /> /* Add props to ContactsPage */
+          }
         />
         <Route
           path={ROUTES.APPOINTMENTS}
-          element={<AppointmentsPage /> /* Add props to AppointmentsPage */}
+          element={
+            <AppointmentsPage
+              onAppointment={handleAppointments}
+              appointments={appointments}
+            /> /* Add props to AppointmentsPage */
+          }
         />
       </Route>
     )
