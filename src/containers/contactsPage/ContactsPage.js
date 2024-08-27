@@ -60,6 +60,9 @@ export const ContactsPage = ({ onContact, contacts }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
+        {contacts.map((contact) => {
+          return <TileList contacts={contact} />;
+        })}
       </section>
     </div>
   );
