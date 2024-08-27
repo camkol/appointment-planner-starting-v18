@@ -12,6 +12,10 @@ export const AppointmentsPage = ({
   Define state variables for 
   appointment info
   */
+  const [currentName, setCurrentName] = useState("");
+  const [contact, setContact] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
