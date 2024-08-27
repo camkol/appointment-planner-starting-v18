@@ -11,10 +11,7 @@ export const ContactsPage = ({ onContact, contacts }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-
-  const isDuplicateName = (contactName) => {
-    return contacts.some((contact) => contact.name === contactName);
-  };
+  const [duplicate, setDuplicate] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +22,7 @@ export const ContactsPage = ({ onContact, contacts }) => {
     Add contact info and clear data
     if the contact name is not a duplicate
     */
-    if (isDuplicateName(name)) {
+    if (duplicate) {
       return alert("Already in Contacts!");
     }
 
@@ -42,6 +39,10 @@ export const ContactsPage = ({ onContact, contacts }) => {
   Using hooks, check for contact name in the 
   contacts array variable in props
   */
+  useEffect(() => {
+    const isDuplicateName = contacts.some((contact) => contact.name === name);
+    setDuplicate(isDuplicateName);
+  }, [name, contacts]);
 
   return (
     <div>
@@ -57,9 +58,7 @@ export const ContactsPage = ({ onContact, contacts }) => {
           handleSubmit={handleSubmit}
         />
       </section>
-
       <hr />
-
       <section>
         <h2>Contacts</h2>
         {contacts.map((contact) => {
