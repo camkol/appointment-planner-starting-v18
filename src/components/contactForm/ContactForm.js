@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const ContactForm = ({
   name,
@@ -21,18 +21,20 @@ export const ContactForm = ({
           onChange={(e) => setName(e.target.value)}
         />
         <input
-          type="text"
+          type="tel"
           placeholder="Phone..."
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+          pattern="^[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}$"
+          title="Phone number should be in the format: 123-456-7890"
         />
         <input
-          type="text"
+          type="email"
           placeholder="Email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button>Add Contact</button>
+        <button type="submit">Add Contact</button>
       </form>
     </>
   );
