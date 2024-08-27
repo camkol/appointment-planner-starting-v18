@@ -58,6 +58,7 @@ export const ContactsPage = ({ onContact, contacts }) => {
         />
       </section>
       <hr />
+
       <section>
         <h2>Contacts</h2>
         {contacts.map((contact) => {
