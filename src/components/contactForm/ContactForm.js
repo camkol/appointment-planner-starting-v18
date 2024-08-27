@@ -7,10 +7,33 @@ export const ContactForm = ({
   setPhone,
   email,
   setEmail,
-  handleSubmit
+  handleSubmit,
 }) => {
   return (
-    <></>
+    <>
+      {" "}
+      <form onSubmit={handleSubmit}>
+        {" "}
+        <input
+          type="text"
+          placeholder="Name..."
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Phone..."
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Email..."
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button>Add Contact</button>
+      </form>
+    </>
   );
 };
-

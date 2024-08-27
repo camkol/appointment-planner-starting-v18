@@ -13,24 +13,25 @@ export const ContactsPage = ({ onContact, contacts }) => {
   const [email, setEmail] = useState("");
 
   const isDuplicateName = (contactName) => {
-    return name.filter((nam) => nam.name === contactName);
+    return contacts.some((contact) => contact.name === contactName);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log(contacts);
+
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
     */
     if (isDuplicateName(name)) {
-      return console.alert("Already in Contacts!");
+      return alert("Already in Contacts!");
     }
 
     const newContact = { name, phone, email };
 
     onContact(newContact);
-
-    console.log(contacts);
 
     setName("");
     setPhone("");
@@ -46,28 +47,15 @@ export const ContactsPage = ({ onContact, contacts }) => {
     <div>
       <section>
         <h2>Add Contact</h2>{" "}
-        <form onSubmit={handleSubmit}>
-          {" "}
-          <input
-            type="text"
-            placeholder="Name..."
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Phone..."
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Email..."
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button>Add Contact</button>
-        </form>
+        <ContactForm
+          name={name}
+          setName={setName}
+          email={email}
+          setEmail={setEmail}
+          phone={phone}
+          setPhone={setPhone}
+          handleSubmit={handleSubmit}
+        />
       </section>
       <hr />
       <section>
