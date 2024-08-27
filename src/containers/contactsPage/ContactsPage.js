@@ -57,6 +57,7 @@ export const ContactsPage = ({ onContact, contacts }) => {
           handleSubmit={handleSubmit}
         />
       </section>
+
       <hr />
 
       <section>
