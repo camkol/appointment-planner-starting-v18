@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 import { TileList } from "../../components/tileList/TileList";
 
-export const AppointmentsPage = ({ onAppointments, Appointments }) => {
+export const AppointmentsPage = ({
+  onAppointments,
+  appointments,
+  contacts,
+}) => {
   /*
   Define state variables for 
   appointment info

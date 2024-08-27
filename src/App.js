@@ -49,6 +49,7 @@ function App() {
             <AppointmentsPage
               onAppointment={handleAppointments}
               appointments={appointments}
+              contacts={contacts}
             /> /* Add props to AppointmentsPage */
           }
         />
