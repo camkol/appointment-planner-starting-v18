@@ -47,7 +47,7 @@ function App() {
           path={ROUTES.APPOINTMENTS}
           element={
             <AppointmentsPage
-              onAppointment={handleAppointments}
+              onAppointments={handleAppointments}
               appointments={appointments}
               contacts={contacts}
             /> /* Add props to AppointmentsPage */

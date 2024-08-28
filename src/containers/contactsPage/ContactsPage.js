@@ -31,6 +31,8 @@ export const ContactsPage = ({ onContact, contacts }) => {
     setName("");
     setPhone("");
     setEmail("");
+
+    console.log(contacts);
   };
 
   /*
@@ -59,7 +61,7 @@ export const ContactsPage = ({ onContact, contacts }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList desciptions={contacts} />
+        <TileList descriptions={contacts} />
       </section>
     </div>
   );
