@@ -16,8 +16,6 @@ export const ContactsPage = ({ onContact, contacts }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(contacts);
-
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
@@ -61,7 +59,7 @@ export const ContactsPage = ({ onContact, contacts }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={contacts} />
+        <TileList desciptions={contacts} />
       </section>
     </div>
   );
