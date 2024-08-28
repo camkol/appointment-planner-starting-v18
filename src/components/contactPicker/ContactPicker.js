@@ -1,7 +1,5 @@
 import React from "react";
 
-export const ContactPicker = () => {
-  return (
-    <></>
-  );
+export const ContactPicker = ({ contacts, onChange, contact, title }) => {
+  return <></>;
 };
